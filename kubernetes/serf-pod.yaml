@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  labels:
+    name: serf
+  name: serf
+spec:
+  containers:
+    - name: serf
+      image: jhansen/serf:wip
+      ports:
+        - containerPort: 7946
+      resources:
+        limits:
+          cpu: "0.1"

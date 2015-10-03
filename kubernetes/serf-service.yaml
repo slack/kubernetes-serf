@@ -1,0 +1,19 @@
+apiVersion: v1
+kind: Service
+metadata:
+  labels:
+    name: serf
+    role: service
+  name: serf
+spec:
+  ports:
+    - name: "serf-tcp"
+      port: 7946
+      targetPort: 7946
+      protocol: TCP
+    - name: "serf-udp"
+      port: 7946
+      targetPort: 7946
+      protocol: UDP
+  selector:
+    name: "serf"
