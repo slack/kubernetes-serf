@@ -15,7 +15,7 @@ COPY bin/boot ${SERF_APPDIR}/boot
 COPY serf ${SERF_APPDIR}/serf
 RUN chmod 755 ${SERF_APPDIR}/boot ${SERF_APPDIR}/serf
 
-COPY serf.conf ${SERF_CONFDIR}/serf.json
+COPY config/serf.json ${SERF_CONFDIR}/serf.json
 
 EXPOSE 7946
 USER serf
