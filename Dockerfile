@@ -1,7 +1,7 @@
 FROM alpine:3.2
 MAINTAINER jason@slack.io
 
-ENV SERF_SERVICE_HOST UNKNOWN
+ENV SERF_DISCOVERY_ADDRESS serf.default.svc.cluster.local
 ENV SERF_APPDIR /app
 ENV SERF_CONFDIR /etc/serf
 
@@ -19,4 +19,4 @@ COPY config/serf.json ${SERF_CONFDIR}/serf.json
 
 EXPOSE 7946
 USER serf
-CMD /app/boot agent -config-dir $SERF_CONFDIR -retry-join $SERF_SERVICE_HOST
+CMD /app/boot agent -config-dir $SERF_CONFDIR -retry-join $SERF_DISCOVERY_ADDRESS

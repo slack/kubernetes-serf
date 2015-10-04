@@ -13,6 +13,6 @@ spec:
     spec:
       containers:
       - name: serf
-        image: quay.io/jhansen/serf:v0.0.9
+        image: quay.io/jhansen/serf:v0.0.10-rc2
         ports:
           - containerPort: 7946
